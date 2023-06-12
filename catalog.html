@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1">
+    <title>HTML Academy: Glacy</title>
+    <link rel="preload" href="fonts/inter-400.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  </head>
+  <body class="page__body">
+    <header class="main-header">
+      <div class="main-header__part container">
+        <div class="main-header__wrapper">
+          <a class="main-header__logo" href="index.html">
+            <picture>
+              <source media="(min-width: 1366px)" srcset="img/images-svg/logo-main.svg">
+              <source media="(min-width: 768px)" srcset="img/images-svg/logo-main.svg">
+              <img class="main-header__logotip" src="img/images-svg/logo-main.svg" width="137" height="56" alt="Логотип сайта глейси.">
+            </picture>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul class="main-nav__list">
+            <li class="main-nav__item main-nav__item--catalog">
+              <a class="main-nav__link" href="catalog.html">Каталог</a>
+            </li>
+            <li class="main-nav__item main-nav__item--delivery">
+              <a class="main-nav__link" href="form.html">Доставка и оплата</a>
+            </li>
+            <li class="main-nav__item main-nav__item--about">
+              <a class="main-nav__link" href="index.html">О компании</a>
+            </li>
+            <li class="main-nav__item main-nav__item--phone">
+              <a class="main-nav__link" href="index.html">
+                <span class="main-nav__phone">+7 800 555-86-28</span>
+              </a>
+            </li>
+            <li class="main-nav__item main-nav__item--search">
+              <a class="main-nav__link main-nav__link--search" href="#">
+                <svg class="main-nav__icon" width="32" height="32">
+                  <use xlink:href="img/sprite.svg#icon-search"></use>
+                </svg>
+                <span class="main-nav__text visually-hidden">Поиск по сайту</span>
+              </a>
+            </li>
+            <li class="main-nav__item main-nav__item--authentication">
+              <a class="main-nav__link main-nav__link--authentication" href="#">
+                <svg class="main-nav__icon" width="88" height="32">
+                  <use xlink:href="img/sprite.svg#icon-authentication.svg"></use>
+                </svg>
+                <span class="main-nav__text visually-hidden">Вход</span>
+              </a>
+            </li>
+            <li class="main-nav__item main-nav__item--basket">
+              <button class="main-header__toggle main-header__toggle--nojs" type="button">
+                <span class="visually-hidden">Открыть меню</span>
+              </button>
+              <a class="main-nav__link main-nav__link--basket main-nav--nojs" href="form.html">
+                <svg class="main-nav__icon" width="21" height="19">
+                  <use xlink:href="img/sprite.svg#icon-basket"></use>
+                </svg>
+                <span class="main-nav__text main-nav__text--basket">
+                  <span class="main-nav__number">2</span>товара
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="catalog">
+        <section class="catalog__menu">
+            <h1 class="visually-hidden">Мороженое на заказ.</h1>
+        <div class="catalog__wrapper">
+            <ul class="catalog__list">
+                <li class="catalog__item catalog__item--home">
+                  <a class="catalog__link catalog__link--index" href="index.html">Главная</a>
+                </li>
+                <li class="catalog__item catalog__item--catalog">
+                  <a class="catalog__link catalog__link--catalog">Каталог</a>
+                </li>
+                <li class="catalog__item catalog__item--icecream">
+                    <a class="catalog__link catalog__link--icecream">Сливочное мороженое</a>
+                </li>
+            </ul>
+        </div>
+        </section>
+        <section class="catalog__sorting sorting">
+            <h2 class="sorting__title">Сортировка</h2>
+            <form class="form" action="https://echo.htmlacademy.ru" method="post">
+                <div class="sorting__container">
+                    <select class="select-control" aria-label="Сортировка">
+                      <option value="popular">по популярности</option>
+                      <option value="cheap">сначала дешевле</option>
+                      <option value="expensive">сначала дороже</option>
+                    </select>
+                  </div>
+                  <div class="sorting__price">
+                      <fieldset class="sorting__filter-group filter-price">
+                          <legend class="sorting__filter-title">
+                            Цена, 100₽ - 500₽:
+                          </legend>
+                          <div class="sorting__wrapper range">
+                              <label class="range__label">
+                                <span class="range__label-text">от</span>
+                                <input class="cost-input cost-min" type="number" placeholder="от" name="min-price" min="100" max="500" value="0">
+                              </label>
+                              <label class="range__label">
+                                <span class="range__label-text">до</span>
+                                <input class="cost-input cost-max" type="number" placeholder="до" name="max-price" min="100" max="1000" value="500">
+                              </label>
+                          </div>
+                          <div class="range">
+                              <div class="range-scale">
+                                <div class="range-bar">
+                                  <button type="button" class="range-toggle toggle-min">
+                                    <span class="visually-hidden">Уменьшить стоимость</span>
+                                  </button>
+                                  <button type="button" class="range-toggle toggle-max">
+                                    <span class="visually-hidden">Увеличить стоимость</span>
+                                  </button>
+                                </div>
+                              </div>
+                          </div>
+                      </fieldset>
+                  </div>
+                  <div class="sorting__fat">
+                      <fieldset class="sorting__filter-group filter-price">
+                          <legend class="catalog-filter-title">
+                            Жирность
+                          </legend>
+                          <ul class="catalog-filter-list">
+                            <li class="catalog-filter-item">
+                              <label class="control">
+                                <input class="radio" type="radio" name="product-group" value="hotel" checked>
+                                <span class="control-mark-radio"></span>
+                                0
+                              </label>
+                            </li>
+                            <li class="catalog-filter-item">
+                              <label class="control">
+                                <input class="radio" type="radio" name="product-group" value="motel" checked>
+                                <span class="control-mark-radio"></span>
+                                до 10%
+                              </label>
+                            </li>
+                            <li class="catalog-filter-item filter-item">
+                              <label class="control">
+                                <input class="radio" type="radio" name="product-group" value="apartment" checked>
+                                <span class="control-mark-radio"></span>
+                                до 30%
+                              </label>
+                            </li>
+                            <li class="catalog-filter-item filter-item">
+                              <label class="control">
+                                <input class="radio" type="radio" name="product-group" value="apartment" checked>
+                                <span class="control-mark-radio"></span>
+                                выше 30%
+                              </label>
+                            </li>
+                          </li>
+                          </ul>
+                        </fieldset>
+                  </div>
+                  <div class="form__wrapper form__wrapper--colors">
+                    <fieldset class="form__group form__group--checkbox container">
+                      <legend class="form__title form__title--colors">Наполнители</legend>
+                      <ul class="form__group-list form__group-list--checkbox">
+                        <li class="form__checkbox">
+                          <label class="form__label-checkbox">
+                            <input class="form__input-checkbox" type="checkbox" name="color" value="white" checked>
+                            <span class="form__checkmark"></span>
+                            <span class="form__text form__text--checkbox">шоколадные</span>
+                          </label>
+                        </li>
+                        <li class="form__checkbox">
+                          <label class="form__label-checkbox">
+                            <input class="form__input-checkbox" type="checkbox" name="color" value="grey" checked>
+                            <span class="form__checkmark"></span>
+                            <span class="form__text form__text--checkbox">Сахарные посыпки</span>
+                          </label>
+                        </li>
+                        <li class="form__checkbox">
+                          <label class="form__label-checkbox">
+                            <input class="form__input-checkbox" type="checkbox" name="color" value="tiffani">
+                            <span class="form__checkmark"></span>
+                            <span class="form__text form__text--checkbox">Фрукты</span>
+                          </label>
+                        </li>
+        
+                        <li class="form__checkbox">
+                          <label class="form__label-checkbox">
+                            <input class="form__input-checkbox" type="checkbox" name="color" value="black">
+                            <span class="form__checkmark"></span>
+                            <span class="form__text form__text--checkbox">Сиропы</span>
+                          </label>
+                        </li>
+                        <li class="form__checkbox">
+                          <label class="form__label-checkbox">
+                            <input class="form__input-checkbox" type="checkbox" name="color" value="pink">
+                            <span class="form__checkmark"></span>
+                            <span class="form__text form__text--checkbox">Джемы</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </fieldset>
+                  </div>
+            </form>  
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__social social">
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__link social__link--telegram" href="https://t.me/htmlacademy">
+                <span class="visually-hidden">Ссылка телеграм.</span>
+                <svg class="social__icon" width="19" height="17">
+                  <use xlink:href="img/sprite.svg#icon-social-telegram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">
+                <span class="visually-hidden">Ссылка вконтакте.</span>
+                <svg class="social__icon" width="27" height="18">
+                  <use xlink:href="img/sprite.svg#icon-social-vk"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--youtube" href="https://www.youtube.com/user/htmlacademy">
+                <span class="visually-hidden">Ссылка youtube.</span>
+                <svg class="social__icon" width="24" height="19">
+                  <use xlink:href="img/sprite.svg#icon-social-youtube"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__information details">
+          <ul class="details__list">
+            <li class="details__item details__item--supply">Для поставщиков</li>
+            <li class="details__item">Наши документы</li>
+            <li class="details__item">О производстве</li>
+            <li class="details__item">Экологические стандарты</li>
+          </ul>
+        </div>
+        <div class="footer__copyright copyright">
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
+            <span class="visually-hidden">Сайт академии.</span>
+            <svg class="copyright__academy" width="27" height="34">
+              <use xlink:href="img/sprite.svg#icon-footer-academy"></use>
+            </svg>
+          </a>
+          <div class="copyright__text">Сделано в
+            <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">© 2021</a>
+          </div>
+        </div>
+      </footer>
+    </body>
+  </html>
+  
