@@ -71,8 +71,8 @@
     <main class="catalog">
         <section class="catalog__menu">
             <h1 class="visually-hidden">Мороженое на заказ.</h1>
-        <div class="catalog__wrapper">
-            <ul class="catalog__list">
+            <div class="catalog__wrapper">
+              <ul class="catalog__list">
                 <li class="catalog__item catalog__item--home">
                   <a class="catalog__link catalog__link--index" href="index.html">Главная</a>
                 </li>
@@ -82,8 +82,8 @@
                 <li class="catalog__item catalog__item--icecream">
                     <a class="catalog__link catalog__link--icecream">Сливочное мороженое</a>
                 </li>
-            </ul>
-        </div>
+              </ul>
+            </div>
         </section>
         <section class="catalog__sorting sorting">
             <h2 class="sorting__title">Сортировка</h2>
@@ -103,20 +103,20 @@
                           <div class="sorting__wrapper range">
                               <label class="range__label">
                                 <span class="range__label-text">от</span>
-                                <input class="cost-input cost-min" type="number" placeholder="от" name="min-price" min="100" max="500" value="0">
+                                <input class="range__input cost-min" type="number" placeholder="от" name="min-price" min="100" max="500" value="0">
                               </label>
                               <label class="range__label">
                                 <span class="range__label-text">до</span>
-                                <input class="cost-input cost-max" type="number" placeholder="до" name="max-price" min="100" max="1000" value="500">
+                                <input class="range__input cost-max" type="number" placeholder="до" name="max-price" min="100" max="1000" value="500">
                               </label>
                           </div>
                           <div class="range">
-                              <div class="range-scale">
-                                <div class="range-bar">
-                                  <button type="button" class="range-toggle toggle-min">
+                              <div class="range__scale">
+                                <div class="range__bar">
+                                  <button type="button" class="range__toggle range__toggle--min">
                                     <span class="visually-hidden">Уменьшить стоимость</span>
                                   </button>
-                                  <button type="button" class="range-toggle toggle-max">
+                                  <button type="button" class="range__toggle range__toggle--max">
                                     <span class="visually-hidden">Увеличить стоимость</span>
                                   </button>
                                 </div>
@@ -124,36 +124,36 @@
                           </div>
                       </fieldset>
                   </div>
-                  <div class="sorting__fat">
-                      <fieldset class="sorting__filter-group filter-price">
-                          <legend class="catalog-filter-title">
+                  <div class="sorting__fatness fatness">
+                      <fieldset class="fatness__group filter-price">
+                          <legend class="fatness__title">
                             Жирность
                           </legend>
-                          <ul class="catalog-filter-list">
-                            <li class="catalog-filter-item">
-                              <label class="control">
-                                <input class="radio" type="radio" name="product-group" value="hotel" checked>
+                          <ul class="fatness__list">
+                            <li class="fatness__item">
+                              <label class="fatness__control">
+                                <input class="fatness__radio" type="radio" name="product-group" value="zero">
                                 <span class="control-mark-radio"></span>
                                 0
                               </label>
                             </li>
-                            <li class="catalog-filter-item">
-                              <label class="control">
-                                <input class="radio" type="radio" name="product-group" value="motel" checked>
+                            <li class="fatness__item">
+                              <label class="fatness__control">
+                                <input class="radio" type="radio" name="product-group" value="upto10" checked>
                                 <span class="control-mark-radio"></span>
                                 до 10%
                               </label>
                             </li>
-                            <li class="catalog-filter-item filter-item">
-                              <label class="control">
-                                <input class="radio" type="radio" name="product-group" value="apartment" checked>
+                            <li class="fatness__item">
+                              <label class="fatness__control">
+                                <input class="radio" type="radio" name="product-group" value="upto30">
                                 <span class="control-mark-radio"></span>
                                 до 30%
                               </label>
                             </li>
-                            <li class="catalog-filter-item filter-item">
-                              <label class="control">
-                                <input class="radio" type="radio" name="product-group" value="apartment" checked>
+                            <li class="fatness__item">
+                              <label class="fatness__control">
+                                <input class="radio" type="radio" name="product-group" value="30up">
                                 <span class="control-mark-radio"></span>
                                 выше 30%
                               </label>
@@ -162,50 +162,279 @@
                           </ul>
                         </fieldset>
                   </div>
-                  <div class="form__wrapper form__wrapper--colors">
-                    <fieldset class="form__group form__group--checkbox container">
-                      <legend class="form__title form__title--colors">Наполнители</legend>
-                      <ul class="form__group-list form__group-list--checkbox">
-                        <li class="form__checkbox">
-                          <label class="form__label-checkbox">
-                            <input class="form__input-checkbox" type="checkbox" name="color" value="white" checked>
-                            <span class="form__checkmark"></span>
-                            <span class="form__text form__text--checkbox">шоколадные</span>
+                  <div class="sorting__additives additives">
+                    <fieldset class="additives__group">
+                      <legend class="additives__title">Наполнители</legend>
+                      <ul class="additives__list">
+                        <li class="additives__checkbox">
+                          <label class="additives__label">
+                            <input class="additives__input" type="checkbox" name="color" value="white" checked>
+                            <span class="additives__checkmark"></span>
+                            <span class="additives__text">шоколадные</span>
                           </label>
                         </li>
-                        <li class="form__checkbox">
-                          <label class="form__label-checkbox">
-                            <input class="form__input-checkbox" type="checkbox" name="color" value="grey" checked>
-                            <span class="form__checkmark"></span>
-                            <span class="form__text form__text--checkbox">Сахарные посыпки</span>
+                        <li class="additives__checkbox">
+                          <label class="additives__label">
+                            <input class="additives__input" type="checkbox" name="color" value="grey" checked>
+                            <span class="additives__checkmark"></span>
+                            <span class="additives__text">Сахарные посыпки</span>
                           </label>
                         </li>
-                        <li class="form__checkbox">
-                          <label class="form__label-checkbox">
-                            <input class="form__input-checkbox" type="checkbox" name="color" value="tiffani">
-                            <span class="form__checkmark"></span>
-                            <span class="form__text form__text--checkbox">Фрукты</span>
+                        <li class="additives__checkbox">
+                          <label class="additives__label">
+                            <input class="additives__input" type="checkbox" name="color" value="tiffani">
+                            <span class="additives__checkmark"></span>
+                            <span class="additives__text">Фрукты</span>
                           </label>
                         </li>
         
-                        <li class="form__checkbox">
-                          <label class="form__label-checkbox">
-                            <input class="form__input-checkbox" type="checkbox" name="color" value="black">
-                            <span class="form__checkmark"></span>
-                            <span class="form__text form__text--checkbox">Сиропы</span>
+                        <li class="additives__checkbox">
+                          <label class="additives__label">
+                            <input class="additives__input" type="checkbox" name="color" value="black">
+                            <span class="additives__checkmark"></span>
+                            <span class="additives__text">Сиропы</span>
                           </label>
                         </li>
-                        <li class="form__checkbox">
-                          <label class="form__label-checkbox">
-                            <input class="form__input-checkbox" type="checkbox" name="color" value="pink">
-                            <span class="form__checkmark"></span>
-                            <span class="form__text form__text--checkbox">Джемы</span>
+                        <li class="additives__checkbox">
+                          <label class="additives__label">
+                            <input class="additives__input" type="checkbox" name="color" value="pink">
+                            <span class="additives__checkmark"></span>
+                            <span class="additives__text">Джемы</span>
                           </label>
                         </li>
                       </ul>
                     </fieldset>
                   </div>
-            </form>  
+            </form>
+            <div class="sorting__order">
+              <a class="sorting__link button button--pink">
+                Отправить
+              </a>
+            </div>  
+        </section>
+        <section class="selection">
+          <div class="selection__wrapper">
+            <ul class="selection__list flavors">
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="img/images-desktop/raspberry-ice@1x.png" srcset="img/images-desktop/marshmellow@2x.png 2x" width="219" height="268" alt="Маршмеллоу малинка в подарок.">
+                </div>
+                <h2 class="flavors__name">Малинка</h2>
+                <p class="flavors__description">Сливочное мороженое с малиновым джемом</p>
+                <div class="flavors__order">
+                  <p class="flavors__price">310 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="img/images-desktop/pistaccio@1x.png" width="168" height="168" alt="Фисташка.">
+                </div>
+                <h2 class="flavors__name">Фисташка</h2>
+                <p class="flavors__description">Фисташковый пломбир с кусочками шоколада</p>
+                <div class="flavord__order">
+                  <p class="flavors__price">340 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="img/images-desktop/blueberry@1x.png" width="168" height="168" alt="Черника.">
+                </div>
+                <h2 class="flavors__name">Черника</h2>
+                <p class="flavors__description">Крем-брюле
+                  с черничным джемом</p>
+                <div class="flavord__order">
+                  <p class="flavors__price">330 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="img/images-desktop/bubblegum@1x.png" width="168" height="168" alt="Баббл гам.">
+                </div>
+                <h2 class="flavors__name">Бабл-гам</h2>
+                <p class="flavors__description">Ванильный пломбир
+                  со сладкой посыпкой</p>
+                <div class="flavord__order">
+                  <p class="flavors__price">320 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="img/images/images-catalog/elderberry.png" width="168" height="168" alt="Баббл гам.">
+                </div>
+                <h2 class="flavors__name">Ежевика</h2>
+                <p class="flavors__description">Сливочное мороженое с ежевичным джемом</p>
+                <div class="flavord__order">
+                  <p class="flavors__price">330 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="img/images/images-catalog/banana.png" width="168" height="168" alt="Баббл гам.">
+                </div>
+                <h2 class="flavors__name">Банан</h2>
+                <p class="flavors__description">Сливочный пломбир
+                  с банановым вкусом</p>
+                <div class="flavord__order">
+                  <p class="flavors__price">340 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="source/img/images/img/images-desktop/bubblegum@1x.png" width="168" height="168" alt="Баббл гам.">
+                </div>
+                <h2 class="flavors__name">Бабл-гам</h2>
+                <p class="flavors__description">Ванильный пломбир
+                  со сладкой посыпкой</p>
+                <div class="flavord__order">
+                  <p class="flavors__price">320 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="source/img/images/img/images-desktop/bubblegum@1x.png" width="168" height="168" alt="Баббл гам.">
+                </div>
+                <h2 class="flavors__name">Бабл-гам</h2>
+                <p class="flavors__description">Ванильный пломбир
+                  со сладкой посыпкой</p>
+                <div class="flavord__order">
+                  <p class="flavors__price">320 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="source/img/images/img/images-desktop/bubblegum@1x.png" width="168" height="168" alt="Баббл гам.">
+                </div>
+                <h2 class="flavors__name">Бабл-гам</h2>
+                <p class="flavors__description">Ванильный пломбир
+                  со сладкой посыпкой</p>
+                <div class="flavord__order">
+                  <p class="flavors__price">320 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="source/img/images/img/images-desktop/bubblegum@1x.png" width="168" height="168" alt="Баббл гам.">
+                </div>
+                <h2 class="flavors__name">Бабл-гам</h2>
+                <p class="flavors__description">Ванильный пломбир
+                  со сладкой посыпкой</p>
+                <div class="flavord__order">
+                  <p class="flavors__price">320 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="source/img/images/img/images-desktop/bubblegum@1x.png" width="168" height="168" alt="Баббл гам.">
+                </div>
+                <h2 class="flavors__name">Бабл-гам</h2>
+                <p class="flavors__description">Ванильный пломбир
+                  со сладкой посыпкой</p>
+                <div class="flavord__order">
+                  <p class="flavors__price">320 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="source/img/images/img/images-desktop/bubblegum@1x.png" width="168" height="168" alt="Баббл гам.">
+                </div>
+                <h2 class="flavors__name">Бабл-гам</h2>
+                <p class="flavors__description">Ванильный пломбир
+                  со сладкой посыпкой</p>
+                <div class="flavord__order">
+                  <p class="flavors__price">320 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flavors__item">
+                <div class="flavors__image">
+                  <img class="flavors__product" src="source/img/images/img/images-desktop/bubblegum@1x.png" width="168" height="168" alt="Баббл гам.">
+                </div>
+                <h2 class="flavors__name">Бабл-гам</h2>
+                <p class="flavors__description">Ванильный пломбир
+                  со сладкой посыпкой</p>
+                <div class="flavord__order">
+                  <p class="flavors__price">320 ₽/кг</p>
+                  <a class="flavors__link" href="#">
+                    <svg class="flavors__icon" width="32" height="32">
+                      <use xlink:href="img/sprite.svg#icon-basket"></use>
+                    </svg>
+                    <span class="flavors__text visually-hidden">Добавить в корзину.</span>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
         </section>
     </main>
     <footer class="footer">
